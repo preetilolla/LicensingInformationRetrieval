@@ -3,14 +3,16 @@ using LicensingRetrieval;
 using LicensingRetrieval.Entities;
 
 // Setting license. For now, pointed to an existing source.
-License license = new License(); ;
-license.SetLicense("C:\\Users\\Preeti.Lolla\\Projects\\TFS\\Solutions\\Server\\packages\\Aspose.Cells\\files\\Aspose.Total.lic");
+License license = new License();
+string licenseFolder = string.Empty; // Use the right path whre the Aspose.Total.lic file is present.
+license.SetLicense(licenseFolder);
 
 var fontsFolderPath = Environment.GetFolderPath(System.Environment.SpecialFolder.Fonts);
 
 // Form / retrieve a list of font file name [entire path], font name, license flag for all fonts
 
 DirectoryInfo fontsFolder = new DirectoryInfo(fontsFolderPath);
+
 var files = fontsFolder.GetFiles();
 
 var fontFileMapping = new List<FontFileDetail>();
